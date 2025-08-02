@@ -33,23 +33,23 @@ HC1T7 - Tâche 7 : Conversion Fahrenheit/Celsius
 
  Explication ligne par ligne
 
-fToC :: Fractional a => a -> a
+          fToC :: Fractional a => a -> a
 
-    La fonction accepte tout type fractionnaire (Float, Double, etc.).
+ La fonction accepte tout type fractionnaire (Float, Double, etc.).
 
-Fractional est requis car on divise par 9.
+ Fractional est requis car on divise par 9.
 
-      fToC f = (f - 32) * 5 / 9
+          fToC f = (f - 32) * 5 / 9
 
 Formule standard : C=(F−32)×59C=9(F−32)×5​
 
-      let t1 = 32
-      let t2 = 212
-      let t3 = 98.6
+       let t1 = 32
+       let t2 = 212
+       let t3 = 98.6
 
 On choisit 3 températures typiques à tester.
 
-      print ("fToC " ++ show t1 ++ "°F = " ++ show (fToC t1) ++ "°C")
+       print ("fToC " ++ show t1 ++ "°F = " ++ show (fToC t1) ++ "°C")
 
 Affiche la conversion avec unités pour plus de clarté.
 
