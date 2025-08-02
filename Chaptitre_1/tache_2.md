@@ -12,18 +12,18 @@ HC1T2 - Tâche 2 : Exemple de fonction pure
 
  Correction complète avec main
 
--- Fichier : Main.hs
-
--- Calcule l'aire d'un cercle à partir du rayon
-circleArea :: Floating a => a -> a
-circleArea r = pi * r * r
-
--- Fonction principale pour tester
-main :: IO ()
-main = do
-    let rayon = 3.0
-    print ("Rayon du cercle       : " ++ show rayon)
-    print ("Aire du cercle        : " ++ show (circleArea rayon))
+     -- Fichier : Main.hs
+     
+     -- Calcule l'aire d'un cercle à partir du rayon
+     circleArea :: Floating a => a -> a
+     circleArea r = pi * r * r
+     
+     -- Fonction principale pour tester
+     main :: IO ()
+     main = do
+         let rayon = 3.0
+         print ("Rayon du cercle       : " ++ show rayon)
+         print ("Aire du cercle        : " ++ show (circleArea rayon))
 
  Explication ligne par ligne
 circleArea :: Floating a => a -> a
@@ -54,6 +54,6 @@ main = do ...
 
  Résultat attendu à l'exécution
 
-"Rayon du cercle       : 3.0"
-"Aire du cercle        : 28.274333882308138"
+     "Rayon du cercle       : 3.0"
+     "Aire du cercle        : 28.274333882308138"
 
