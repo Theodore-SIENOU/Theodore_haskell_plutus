@@ -25,32 +25,27 @@ HC1T2 - Tâche 2 : Exemple de fonction pure
          print ("Rayon du cercle       : " ++ show rayon)
          print ("Aire du cercle        : " ++ show (circleArea rayon))
 
- Explication ligne par ligne
-circleArea :: Floating a => a -> a
+Explication ligne par ligne
 
-    Type générique : fonctionne avec Float, Double, etc.
+     circleArea :: Floating a => a -> a
 
-    Floating a : permet d’utiliser des nombres à virgule et pi.
+Type générique : fonctionne avec Float, Double, etc.
 
-    Elle prend un nombre r et retourne π × r².
+     Floating a : permet d’utiliser des nombres à virgule et pi.
 
-circleArea r = pi * r * r
+ Elle prend un nombre r et retourne π × r².
 
-    pi est une constante prédéfinie en Haskell (3.14159265...)
+     circleArea r = pi * r * r
 
-    C’est une fonction pure car :
+ pi est une constante prédéfinie en Haskell (3.14159265...)
 
-        elle ne lit rien d’extérieur,
+ C’est une fonction pure car : elle ne lit rien d’extérieur,elle ne modifie rien,
+ elle donne toujours le même résultat pour la même entrée.
 
-        elle ne modifie rien,
+      main = do ...
 
-        elle donne toujours le même résultat pour la même entrée.
-
-main = do ...
-
-    Définit une valeur rayon = 3.0
-
-    Affiche le rayon et le résultat avec print + show.
+ Définit une valeur rayon = 3.0
+ Affiche le rayon et le résultat avec print + show.
 
  Résultat attendu à l'exécution
 
