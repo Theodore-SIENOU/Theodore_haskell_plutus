@@ -36,13 +36,13 @@ Définir une fonction addNumbers qui :
 
  Explication ligne par ligne
 
-addNumbers :: Num a => a -> a -> a
+         addNumbers :: Num a => a -> a -> a
 
-    La fonction accepte n’importe quel type a qui fait partie de la classe Num.
+ La fonction accepte n’importe quel type a qui fait partie de la classe Num.
 
-    Cela inclut : Int, Integer, Float, Double, etc.
+ Cela inclut : Int, Integer, Float, Double, etc.
 
-addNumbers x y = x + y
+           addNumbers x y = x + y
 
 Retourne simplement la somme des deux arguments.
 
@@ -50,9 +50,9 @@ Retourne simplement la somme des deux arguments.
         let c = 3.5 :: Float
         let e = 100000000000 :: Integer
 
- On spécifie les types pour tester différents cas (Int, Float, Integer).
+On spécifie les types pour tester différents cas (Int, Float, Integer).
 
-    print ("addNumbers " ++ show a ++ " " ++ show b ++ " = " ++ show (addNumbers a b))
+         print ("addNumbers " ++ show a ++ " " ++ show b ++ " = " ++ show (addNumbers a b))
 
 Affiche les résultats avec les valeurs utilisées.
 
