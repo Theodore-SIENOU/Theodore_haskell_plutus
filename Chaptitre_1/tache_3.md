@@ -50,7 +50,7 @@ main = do ...
 
  Résultat attendu à l'exécution
 
-"greaterThan18 12 = False"
-"greaterThan18 18 = False"
-"greaterThan18 25 = True"
+     "greaterThan18 12 = False"
+     "greaterThan18 18 = False"
+     "greaterThan18 25 = True"
 
