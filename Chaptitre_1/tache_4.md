@@ -43,25 +43,24 @@ HC1T4 - Tâche 4 : Composer une fonction pour traiter des données de joueurs
 
  Explication ligne par ligne
 
-sortBy (\(_, s1) (_, s2) -> compare s2 s1)
+      sortBy (\(_, s1) (_, s2) -> compare s2 s1)
 
-    Trie les joueurs en comparant les scores (s2 d'abord pour décroissant).
+ Trie les joueurs en comparant les scores (s2 d'abord pour décroissant).
 
-take 3
+      take 3
 
-    Garde les 3 premiers éléments de la liste triée.
+ Garde les 3 premiers éléments de la liste triée.
 
-getTopThreePlayers = topThree . sortByScore
+      getTopThreePlayers = topThree . sortByScore
 
-    Compose les deux fonctions pour :
+ Compose les deux fonctions pour :
 
-        Trier les joueurs par score.
+   Trier les joueurs par score.
+   En extraire les trois meilleurs.
 
-        En extraire les trois meilleurs.
-
-main = do ...
-
-    Crée une liste de joueurs.
+      main = do ...
+      
+   Crée une liste de joueurs.
 
     Affiche la liste originale.
 
