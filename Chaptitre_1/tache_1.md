@@ -36,23 +36,24 @@ HC1T1 - Tâche 1 : Composition de fonctions
          print ("doubleThenIncrement x = " ++ show (doubleThenIncrement x))
 
  Explication
-double :: Int -> Int
+ 
+    double :: Int -> Int
 
-    Déclare une fonction qui prend un Int et retourne x * 2
+ Déclare une fonction qui prend un Int et retourne x * 2
 
-increment :: Int -> Int
+     increment :: Int -> Int
 
-    Ajoute simplement 1 à l'entrée
+ Ajoute simplement 1 à l'entrée
 
-doubleThenIncrement = increment . double
+     doubleThenIncrement = increment . double
 
-    Applique la composition de fonctions
-    Cela signifie : doubleThenIncrement x = increment (double x)
+ Applique la composition de fonctions, Cela signifie : 
+ doubleThenIncrement x = increment (double x)
 
-main :: IO ()
+      main :: IO ()
 
-    Point d'entrée du programme.
-    Utilise print pour afficher les résultats dans le terminal, avec des show pour convertir les nombres en texte.
+ Point d'entrée du programme.
+ Utilise print pour afficher les résultats dans le terminal, avec des show pour convertir les nombres en texte.
 
  Résultat à l'exécution
 
