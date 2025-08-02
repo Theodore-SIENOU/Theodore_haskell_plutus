@@ -28,25 +28,22 @@ HC1T3 - Tâche 3 : Vérifier si un nombre est supérieur à 18
            print ("greaterThan18 " ++ show c ++ " = " ++ show (greaterThan18 c))
 
  Explication ligne par ligne
-greaterThan18 :: (Ord a, Num a) => a -> Bool
+ 
+      greaterThan18 :: (Ord a, Num a) => a -> Bool
+      
+ Num a : a doit être un type numérique (Int, Float, etc.).
+ Ord a : a doit pouvoir être comparé avec > (ordre).
+ La fonction retourne un Booléen : True ou False.
 
-    Num a : a doit être un type numérique (Int, Float, etc.).
+     greaterThan18 x = x > 18
 
-    Ord a : a doit pouvoir être comparé avec > (ordre).
+Si x est strictement plus grand que 18, alors True
+Sinon, False
 
-    La fonction retourne un Booléen : True ou False.
+    main = do ...
 
-greaterThan18 x = x > 18
-
-    Si x est strictement plus grand que 18, alors True
-
-    Sinon, False
-
-main = do ...
-
-    Teste la fonction avec plusieurs valeurs (12, 18, 25)
-
-    Utilise print avec show pour bien afficher les résultats
+Teste la fonction avec plusieurs valeurs (12, 18, 25)
+Utilise print avec show pour bien afficher les résultats
 
  Résultat attendu à l'exécution
 
