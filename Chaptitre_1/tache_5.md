@@ -28,22 +28,20 @@ Créer une fonction infiniteNumbers qui :
 
  Explication ligne par ligne
 
-infiniteNumbers :: [Int]
-infiniteNumbers = [1..]
+          infiniteNumbers :: [Int]
+          infiniteNumbers = [1..]
 
-    Crée une liste infinie de Int démarrant à 1.
+   Crée une liste infinie de Int démarrant à 1.
+   Grâce à la paresse, Haskell ne calcule les valeurs que lorsqu'on en a besoin.
 
-    Grâce à la paresse, Haskell ne calcule les valeurs que lorsqu'on en a besoin.
+         let premiers = take n infiniteNumbers
 
-let premiers = take n infiniteNumbers
+         take n   extrait les n premiers éléments de la liste infinie.
+   Haskell s’arrête automatiquement après avoir obtenu ces n valeurs (grâce à l’évaluation paresseuse).
 
-    take n extrait les n premiers éléments de la liste infinie.
+           putStrLn (...)` et `print premiers
 
-    Haskell s’arrête automatiquement après avoir obtenu ces n valeurs (grâce à l’évaluation paresseuse).
-
-putStrLn (...)` et `print premiers
-
-    Affiche les n premiers éléments extraits de la liste.
+  Affiche les n premiers éléments extraits de la liste.
 
  Résultat attendu à l’exécution
 
