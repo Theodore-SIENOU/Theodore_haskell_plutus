@@ -40,7 +40,7 @@ main = do
     putStrLn $ "Est-ce que Haskell est fun ? " ++ show isHaskellFun
 
     -- Essayons de modifier myAge (décommente pour tester)
-    -- myAge = 30   -- ❌ Erreur : les variables sont immuables
+    -- myAge = 30   --  Erreur : les variables sont immuables
 
 
  **Explication ligne par ligne**
@@ -77,13 +77,13 @@ isHaskellFun = True
 myAge = 30
 
 
-* ❌ Si tu décommente cette ligne, le compilateur renverra une **erreur** :
+*  Si tu décommente cette ligne, le compilateur renverra une **erreur** :
   *“Multiple declarations of `myAge`”*.
 * Car en Haskell, les **variables sont immuables** (on ne peut pas les réassigner).
 
 
 
-✅ **Résultat attendu à l’exécution**
+ **Résultat attendu à l’exécution**
 
 
 Mon âge est : 25
