@@ -1,4 +1,4 @@
-**HC3T6 – Tâche avancée 6 : Vérification d’une année bissextile**
+**HC3T6 – Tâche avancée 6 : Vérifiant une année bissextile avec if-then-else**
 
 ###  Objectif
 
@@ -18,7 +18,6 @@
   * `isLeapYear 1900`
   * `isLeapYear 2024`
 
----
 
 ###  Correction complète avec `main`
 
@@ -41,7 +40,6 @@ main = do
     putStrLn $ "isLeapYear 2024 = " ++ show (isLeapYear 2024)
 ```
 
----
 
 ###  Explication ligne par ligne
 
