@@ -1,4 +1,4 @@
-HC3T2 – Tâche 2 : Déterminer la note à partir d’un score**
+HC3T2 – Tâche 2 :  Déterminer la note à partir d'un score avec des gardes**
 
 ###  Objectif
 
