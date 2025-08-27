@@ -1,22 +1,23 @@
-**HC4T2 – Tâche 2 :  carte d'identité électricé de télévision**
+##  HC4T2 – Tâche 2 : carte d'identité électricé de télévision
 
- Objectif
-Créer une fonction `dayType :: String -> String`
+###  Objectif
 
-* Prend en entrée un jour de la semaine.
-* Retourne :
+Créer une fonction `dayType :: String -> String` qui :
 
-  * `"Samedi"` ou `"Dimanche"` → `"C'est le week-end"`
-  * Tout autre jour valide (Lundi → Vendredi) → `"C'est un jour de semaine"`
-  * Sinon → `"Jour invalide"`
+1. Prend en entrée le **nom d’un jour de la semaine** (`"Lundi"`, `"Mardi"`, …, `"Dimanche"`)
+2. Retourne un message indiquant si c’est **un jour de semaine** ou **le week-end**
+3. Si le jour est invalide, retourne `"Jour invalide"`
 
- Correction complète avec `main`
+
+
+###  Exemple corrigé avec `case` et pattern matching
 
 ```haskell
--- Définition de la fonction
+-- Fichier : Main.hs
+
+-- Fonction pour déterminer le type de jour
 dayType :: String -> String
-dayType jour =
-  case jour of
+dayType jour = case jour of
     "Samedi"   -> "C'est le week-end"
     "Dimanche" -> "C'est le week-end"
     "Lundi"    -> "C'est un jour de semaine"
@@ -29,8 +30,24 @@ dayType jour =
 -- Programme principal pour tester
 main :: IO ()
 main = do
-  putStrLn (dayType "Lundi")
-  putStrLn (dayType "Samedi")
-  putStrLn (dayType "Dimanche")
-  putStrLn (dayType "Funday")
+    putStrLn $ dayType "Lundi"
+    putStrLn $ dayType "Samedi"
+    putStrLn $ dayType "Dimanche"
+    putStrLn $ dayType "Funday"
+```
+
+###  Explications
+
+* `case jour of` = permet de tester **tous les cas possibles**
+* Chaque jour est un **pattern** qui retourne le message correspondant
+* `_` = correspond à **tous les autres cas non définis** (jour invalide)
+
+
+###  Résultats attendus
+
+```
+C'est un jour de semaine
+C'est le week-end
+C'est le week-end
+Jour invalide
 ```
