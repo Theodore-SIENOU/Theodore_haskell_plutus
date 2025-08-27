@@ -1,4 +1,4 @@
-**HC3T9 – Tâche supérieure 9 : Maximum de trois nombres**
+**HC3T9 – Tâche supérieure 9 : Trouver le maximum de trois nombres avec let**
 
 ###  Objectif
 
