@@ -1,4 +1,4 @@
-HC3T1 – Tâche 1 : Vérification d’un nombre**
+**HC3T1 – Tâche 1 : Vérifiant si un nombre de nombres positifs, négatif ou nul**
 
 ###  Objectif
 
