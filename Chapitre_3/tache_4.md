@@ -1,6 +1,4 @@
-**HC3T4 – Tâche 4 : Aire d’un triangle avec la formule de Héron**
-
----
+**HC3T4 – Tâche 4 : Calculer l’aire d’un triangle avec la formule de Héron**
 
 ###  Objectif
 
@@ -18,7 +16,6 @@
   * `triangleArea 3 4 5`
   * `triangleArea 7 8 9`
 
----
 
 ###  Correction complète avec `main`
 
@@ -37,9 +34,6 @@ main = do
     putStrLn $ "triangleArea 3 4 5 = " ++ show (triangleArea 3 4 5)
     putStrLn $ "triangleArea 7 8 9 = " ++ show (triangleArea 7 8 9)
 ```
-
----
-
 ###  Explication ligne par ligne
 
 ```haskell
