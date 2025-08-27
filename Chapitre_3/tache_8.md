@@ -1,4 +1,4 @@
-**HC3T8 – Tâche avancée 8 : Calcul de l’IMC**
+**HC3T8 – Tâche avancée 8 : Calcul de l’IMC et la retourner avec où**
 
 ###  Objectif
 
