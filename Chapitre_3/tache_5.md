@@ -1,4 +1,4 @@
-**HC3T5 – Tâche 5 : Type d’un triangle**
+**HC3T5 – Tâche 5 : Déterminer le type d'un triangle avec des gardes**
 
 ###  Objectif
 
@@ -17,8 +17,6 @@
   * `triangleType 3 3 3`
   * `triangleType 5 5 8`
   * `triangleType 6 7 8`
-
----
 
 ###  Correction complète avec `main`
 
@@ -39,8 +37,6 @@ main = do
     putStrLn $ "triangleType 5 5 8 = " ++ triangleType 5 5 8
     putStrLn $ "triangleType 6 7 8 = " ++ triangleType 6 7 8
 ```
-
----
 
 ###  Explication ligne par ligne
 
@@ -68,8 +64,6 @@ triangleType :: (Eq a) => a -> a -> a -> String
 ```
 
 * Aucun côté égal → triangle scalène.
-
----
 
 ### Résultat attendu à l’exécution
 
