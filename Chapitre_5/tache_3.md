@@ -1,38 +1,42 @@
-**HC5T3 – Vérifier la présence de majuscules**.
+##  HC5T3 – Tâche 3 : Vérifier la présence de majuscules
 
-On doit écrire une fonction qui utilise **`any`** pour vérifier si une **liste de mots**
-contient **au moins un mot commençant par une majuscule**.
+###  Objectif
+
+Créer une fonction qui :
+
+1. Prend en entrée une **liste de mots** (`[String]`).
+2. Vérifie si **au moins un mot commence par une majuscule**.
+3. Utilise la fonction d’ordre supérieur **`any`** et une **fonction lambda** ou `isUpper` pour effectuer la vérification.
 
 
-###  Solution en Haskell
+###  Exemple corrigé avec `any` et lambda
 
 ```haskell
+-- Fichier : Main.hs
 import Data.Char (isUpper)
 
-hasCapitalizedWord :: [String] -> Bool
-hasCapitalizedWord words = any startsWithUpper words
-  where
-    startsWithUpper []     = False         -- mot vide → pas de majuscule
-    startsWithUpper (c:_)  = isUpper c     -- vérifie si le 1er caractère est une majuscule
-```
+-- Fonction pour vérifier la présence d'un mot commençant par une majuscule
+hasCapitalWord :: [String] -> Bool
+hasCapitalWord = any (\word -> not (null word) && isUpper (head word))
 
-###  Explication
-
-* `any f liste` retourne `True` si **au moins un élément** de la liste satisfait le prédicat `f`.
-* Ici, le prédicat `startsWithUpper` teste si le premier caractère est une majuscule (`isUpper`).
-* Les mots vides (`""`) sont ignorés (retournent `False`).
-
-
-###  Exemple de test
-
-```haskell
+-- Programme principal pour tester
 main :: IO ()
 main = do
-    print (hasCapitalizedWord ["hello", "world"])        -- False
-    print (hasCapitalizedWord ["bonjour", "Paris"])      -- True
-    print (hasCapitalizedWord ["java", "haskell", "C"])  -- True
-    print (hasCapitalizedWord ["", "python"])            -- False
+    print $ hasCapitalWord ["bonjour", "monde"]       -- False
+    print $ hasCapitalWord ["hello", "World"]        -- True
+    print $ hasCapitalWord ["Haskell", "est", "fun"] -- True
+    print $ hasCapitalWord ["", "empty"]             -- False
 ```
+
+
+###  Explications
+
+* `any` = retourne `True` si **au moins un élément** de la liste satisfait la condition.
+* `\word -> ...` = **fonction lambda** qui teste chaque mot.
+* `not (null word)` = vérifie que le mot n’est pas vide.
+* `isUpper (head word)` = vérifie que **la première lettre** est une majuscule.
+* La fonction peut traiter des listes de mots vides sans provoquer d’erreur.
+
 
 ###  Résultats attendus
 
