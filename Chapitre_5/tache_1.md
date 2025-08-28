@@ -1,46 +1,46 @@
-**HC5T1 – Utiliser `applyTwice`**
+##  HC5T1 – Tâche 1 : Utiliser `applyTwice`
 
-On nous demande d’écrire une fonction qui prend **une fonction** et **un entier**,
-puis applique cette fonction **trois fois** à l’entier.
+###  Objectif
 
-###  Rappel : `applyTwice`
+Créer une fonction qui :
 
-En Haskell, on définit souvent :
+1. Prend une **fonction** `(Int -> Int)` et un **entier** en entrée.
+2. Applique la fonction **trois fois** à l’entier.
+3. Utilise éventuellement une fonction auxiliaire `applyTwice` (qui applique une fonction deux fois).
+
+
+### Exemple corrigé avec `applyTwice`
 
 ```haskell
+-- Fichier : Main.hs
+
+-- Fonction qui applique une fonction deux fois
 applyTwice :: (a -> a) -> a -> a
 applyTwice f x = f (f x)
-```
 
-C’est-à-dire : applique `f` deux fois sur `x`.
-
-###  Solution pour appliquer **trois fois**
-
-On peut définir `applyThrice` à partir de `applyTwice` :
-
-```haskell
+-- Fonction qui applique une fonction trois fois
 applyThrice :: (a -> a) -> a -> a
 applyThrice f x = f (applyTwice f x)
-```
 
-###  Explication
-
-* `applyTwice f x` applique `f` deux fois : `f (f x)`
-* Ensuite on applique encore `f` une fois de plus : `f (f (f x))`
-
-###  Exemple de test
-
-```haskell
+-- Programme principal pour tester
 main :: IO ()
 main = do
-    print (applyThrice (+1) 5)   -- 8   (5+1+1+1)
-    print (applyThrice (*2) 1)   -- 8   (1*2*2*2)
-    print (applyThrice reverse "abc") -- "abc" (car reverse 3 fois remet la chaîne d'origine)
+    print $ applyThrice (+2) 5    -- 11  (5+2=7, 7+2=9, 9+2=11)
+    print $ applyThrice (*3) 2    -- 54  (2*3=6, 6*3=18, 18*3=54)
 ```
+
+
+###  Explications
+
+* `applyTwice f x = f (f x)` = applique `f` **deux fois** à `x`.
+* `applyThrice f x = f (applyTwice f x)` = applique `f` **une troisième fois** sur le résultat de `applyTwice`.
+* `(+) 2` ou `(*3)` = exemples de fonctions passées en argument.
+* `applyThrice` peut fonctionner avec **toutes les fonctions de type `a -> a`**, pas seulement `Int -> Int`.
+
 
 ###  Résultats attendus
 
-8
-8
-"abc"
+```
+11
+54
 ```
