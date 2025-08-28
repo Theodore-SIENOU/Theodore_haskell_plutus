@@ -1,40 +1,44 @@
-**HC5T5 – Application partielle**.
+##  HC5T5 – Tâche 5 : Application partielle
 
-### Objectif
+###  Objectif
 
-Créer une fonction multiplyByFive qui utilise l’application partielle
-pour multiplier n’importe quel nombre par 5
+Créer une fonction `multiplyByFive` qui :
 
-###  Solution en Haskell
+1. Utilise **l’application partielle** pour multiplier un nombre par 5.
+2. Évite d’écrire explicitement le paramètre.
+3. Peut être utilisée sur n’importe quel entier ou nombre compatible (`Num a => a`).
+
+
+###  Exemple corrigé avec application partielle
 
 ```haskell
-multiplyByFive :: Int -> Int
-multiplyByFive = (*) 5
+-- Fichier : Main.hs
+
+-- Version avec application partielle
+multiplyByFive :: Num a => a -> a
+multiplyByFive = (* 5)
+
+-- Programme principal pour tester
+main :: IO ()
+main = do
+    print $ multiplyByFive 2    -- 10
+    print $ multiplyByFive 7    -- 35
+    print $ multiplyByFive 0    -- 0
 ```
 
 
-###  Explication
+###  Explications
 
-* `(*)` est l’opérateur de multiplication, de type :
-
-  ```haskell
-  (*) :: Num a => a -> a -> a
-  ```
-* Si on lui applique déjà **un argument (5)**, on obtient une **fonction partielle** :
-
-  ```haskell
-  (*) 5 :: Num a => a -> a
-  ```
-
-  qui correspond exactement à “multiplier par 5”.
+* `(* 5)` = fonction qui attend un argument et le multiplie par 5.
+* `multiplyByFive = (* 5)` = **application partielle**, on n’écrit pas le paramètre explicitement.
+* Fonction **générique** : type `Num a => a -> a`, fonctionne avec `Int`, `Double`, etc.
+* Exemple : `multiplyByFive 2` → `2 * 5 = 10`.
 
 
-###  Exemple de test
+###  Résultats attendus
 
-```haskell
-main :: IO ()
-main = do
-    print (multiplyByFive 3)   -- 15
-    print (multiplyByFive 10)  -- 50
-    print (multiplyByFive 0)   -- 0
+```
+10
+35
+0
 ```
