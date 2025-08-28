@@ -1,29 +1,42 @@
-**HC5T9 – Fonction d’ordre supérieur pour transformer une liste**
+## HC5T9 – Tâche 9 : Fonction d’ordre supérieur pour transformer une liste
 
-###  Énoncé
+###  Objectif
 
-On veut écrire une fonction `transformList` qui prend une fonction `(a -> a)` et une liste `[a]`,
-et applique **deux fois** cette fonction à chaque élément.
+Créer une fonction `transformList` qui :
+
+1. Prend une **fonction** `(a -> a)` et une **liste** `[a]` en entrée.
+2. Applique la fonction **deux fois** à chaque élément de la liste.
+3. Utilise **`map`** pour transformer chaque élément.
+4. Peut fonctionner avec **n’importe quel type compatible** avec la fonction fournie.
 
 
-###  Solution Haskell
+###  Exemple corrigé avec `map` et fonction appliquée deux fois
 
 ```haskell
--- applique deux fois f à chaque élément
+-- Fichier : Main.hs
+
+-- Fonction qui applique une fonction deux fois à chaque élément d'une liste
 transformList :: (a -> a) -> [a] -> [a]
-transformList f xs = map (f . f) xs
+transformList f = map (f . f)  -- compose f avec elle-même
+
+-- Programme principal pour tester
+main :: IO ()
+main = do
+    print $ transformList (+2) [1,2,3]    -- [5,6,7]   ((1+2)+2, (2+2)+2, (3+2)+2)
+    print $ transformList (*3) [1,2,3]    -- [9,12,15] ((1*3)*3, (2*3)*3, (3*3)*3)
 ```
 
-###  Explication
+###  Explications
 
-* `map` applique une fonction à chaque élément d’une liste.
-* `(f . f)` est la **composition de fonctions** : équivalent à `\x -> f (f x)`.
-* Donc `map (f . f) xs` applique deux fois `f` à chaque élément de `xs`.
+* `map (f . f)` = compose `f` avec elle-même et applique à chaque élément de la liste.
+* `(f . f)` = équivalent à `\x -> f (f x)` mais en **style point-free**.
+* Exemple : `(+2) . (+2)` appliqué à 1 → `(1+2)+2 = 5`.
+* La fonction est **générique** et fonctionne pour n’importe quel type compatible avec la fonction donnée.
 
 
-###  Exemple d’utilisation
+###  Résultats attendus
 
-```haskell
-transformList (+1) [1,2,3]   -- Résultat : [3,4,5]
-transformList (*2) [1,2,3]   -- Résultat : [4,8,12]
+```
+[5,6,7]
+[9,12,15]
 ```
