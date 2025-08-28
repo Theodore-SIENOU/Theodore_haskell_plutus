@@ -1,67 +1,65 @@
-# HC2T2 - Tâche 2 : Signatures de fonctions
+##  HC2T2 – Tâche 2 : Signatures de fonctions
 
-## Objectif
+###  Objectif
 
-Écrire les **signatures** et les **implémentations** de trois fonctions simples en Haskell :
+1. Définir les **signatures de fonctions** en Haskell.
+2. Implémenter les fonctions suivantes :
 
-1. `add` → somme de deux entiers.
-2. `isEven` → vérifie si un entier est pair.
-3. `concatStrings` → concatène deux chaînes de caractères.
+   * `add` : prend deux `Int` et retourne leur somme.
+   * `isEven` : prend un `Int` et retourne un `Bool` indiquant si le nombre est pair.
+   * `concatStrings` : prend deux `String` et retourne leur concaténation.
 
-## Correction complète avec `Main.hs`
+
+###  Code avec signatures et implémentations
 
 ```haskell
 -- Fichier : Main.hs
 
--- 1. Addition de deux entiers
+-- Fonction qui additionne deux entiers
 add :: Int -> Int -> Int
 add x y = x + y
 
--- 2. Vérifie si un entier est pair
+-- Fonction qui vérifie si un entier est pair
 isEven :: Int -> Bool
 isEven n = n `mod` 2 == 0
 
--- 3. Concatène deux chaînes de caractères
+-- Fonction qui concatène deux chaînes de caractères
 concatStrings :: String -> String -> String
 concatStrings s1 s2 = s1 ++ s2
 
--- Fonction principale pour tester
+-- Programme principal pour tester
 main :: IO ()
 main = do
-    -- Test add
-    print ("add 3 5 = " ++ show (add 3 5))
+    print $ add 5 7                    -- 12
+    print $ isEven 10                  -- True
+    print $ isEven 7                   -- False
+    print $ concatStrings "Hello, " "World!"  -- "Hello, World!"
+```
 
-    -- Test isEven
-    print ("isEven 4 = " ++ show (isEven 4))
-    print ("isEven 7 = " ++ show (isEven 7))
 
-    -- Test concatStrings
-    print ("concatStrings \"Hello\" \" World\" = " ++ concatStrings "Hello" " World")
+###  Explications
 
-## Explication ligne par ligne
+1. **Signature `add :: Int -> Int -> Int`**
 
-### `add :: Int -> Int -> Int`
+   * La fonction prend deux entiers (`Int`, `Int`) et retourne un entier (`Int`).
+   * Exemple : `add 5 7 = 12`.
 
-* Signature : prend deux `Int` et retourne un `Int`.
-* Définition : `add x y = x + y`.
+2. **Signature `isEven :: Int -> Bool`**
 
-### `isEven :: Int -> Bool`
+   * La fonction prend un entier et retourne un booléen.
+   * `n \`mod\` 2 == 0`vérifie si`n\` est divisible par 2.
 
-* Signature : prend un `Int` et retourne un `Bool`.
-* Définition : utilise `mod` pour vérifier si le reste de la division par 2 est nul.
+3. **Signature `concatStrings :: String -> String -> String`**
 
-### `concatStrings :: String -> String -> String`
+   * La fonction prend deux chaînes et retourne leur concaténation.
+   * L’opérateur `++` est utilisé pour coller deux chaînes.
 
-* Signature : prend deux `String` et retourne un `String`.
-* Définition : utilise `++` pour concaténer les deux chaînes.
 
-### `main`
+###  Résultats attendus
 
-* Appelle et affiche les résultats avec `print` et `show`.
-
-## Résultat attendu à l’exécution
-
-"add 3 5 = 8"
-"isEven 4 = True"
-"isEven 7 = False"
-"concatStrings \"Hello\" \" World\" = Hello World"
+```
+12
+True
+False
+"Hello, World!"
+```
