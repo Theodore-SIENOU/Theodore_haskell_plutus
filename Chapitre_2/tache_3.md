@@ -1,92 +1,67 @@
-HC2T3 - Tâche 3 : Variables d'économie
+##  HC2T3 – Tâche 3 : Variables immuables
+
+###  Objectif
+
+1. Définir des **variables immuables** en Haskell.
+2. Comprendre que dans Haskell, une fois une variable définie, **elle ne peut pas être modifiée** (immutabilité).
+3. Tester la tentative de modification d’une variable pour observer l’erreur générée.
 
 
-
- **Objectif**
-
-* Définir des **variables immuables** en Haskell :
-
-  * `myAge` comme un `Int`
-  * `piValue` comme un `Double`
-  * `salutation` comme un `String`
-  * `isHaskellFun` comme un `Bool`
-* Tester ce qui se passe si on essaie de les **modifier** (spoiler : impossible, car Haskell a des variables **immutables**).
-
-
- **Correction complète avec `main`**
+###  Code Haskell
 
 ```haskell
 -- Fichier : Main.hs
 
--- Variables immuables
+-- Définition de variables immuables
 myAge :: Int
-myAge = 25
+myAge = 20
 
 piValue :: Double
 piValue = 3.14159
 
-salutation :: String
-salutation = "Bonjour, Haskell!"
+greeting :: String
+greeting = "Hello, Haskell!"
 
 isHaskellFun :: Bool
 isHaskellFun = True
 
--- Fonction principale pour tester
+-- Programme principal pour afficher les valeurs
 main :: IO ()
 main = do
-    putStrLn $ "Mon âge est : " ++ show myAge
-    putStrLn $ "La valeur de pi est : " ++ show piValue
-    putStrLn $ "Salutation : " ++ salutation
-    putStrLn $ "Est-ce que Haskell est fun ? " ++ show isHaskellFun
+    print myAge
+    print piValue
+    print greeting
+    print isHaskellFun
 
-    -- Essayons de modifier myAge (décommente pour tester)
-    -- myAge = 30   --  Erreur : les variables sont immuables
-
-
- **Explication ligne par ligne**
-
-```haskell
-myAge :: Int
-myAge = 25
+    -- Tentative de "modifier" une variable
+    -- Décommentez la ligne suivante pour tester :
+    -- myAge = 25
 ```
 
-* Déclare `myAge` comme un entier (`Int`), fixé à 25.
 
-```haskell
-piValue :: Double
-piValue = 3.14159
+###  Explications
+
+1. **Déclaration des variables**
+
+   * `myAge :: Int` → variable entière (20).
+   * `piValue :: Double` → valeur flottante avec décimales.
+   * `greeting :: String` → une chaîne de caractères.
+   * `isHaskellFun :: Bool` → un booléen (`True` ou `False`).
+
+2. **Immutabilité**
+
+   * En Haskell, une variable est une **constante**.
+   * Par exemple, `myAge` vaut toujours 20.
+   * Si on essaie de réassigner `myAge = 25`, GHCi retournera une **erreur de compilation**.
+
+
+###  Résultats attendus
+
+En exécutant `main` :
+
 ```
-
-* Une valeur flottante (plus précise que `Float`).
-
-```haskell
-salutation :: String
-salutation = "Bonjour, Haskell!"
+20
+3.14159
+"Hello, Haskell!"
+True
 ```
-
-* Une chaîne de caractères.
-
-```haskell
-isHaskellFun :: Bool
-isHaskellFun = True
-```
-
-* Un booléen.
-
-```haskell
-myAge = 30
-
-
-*  Si tu décommente cette ligne, le compilateur renverra une **erreur** :
-  *“Multiple declarations of `myAge`”*.
-* Car en Haskell, les **variables sont immuables** (on ne peut pas les réassigner).
-
-
-
- **Résultat attendu à l’exécution**
-
-
-Mon âge est : 25
-La valeur de pi est : 3.14159
-Salutation : Bonjour, Haskell!
-Est-ce que Haskell est fun ? True
