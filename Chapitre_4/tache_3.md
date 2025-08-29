@@ -1,5 +1,16 @@
 **HC4T3 – Tâche 3 : un écran d'avertissement de système**.
 
+## Sujet
+
+
+    Écrire une fonction gradeComment :: Int -> String qui prend une note et retourne un commentaire selon la tranche :
+        90 - 100 → « Excellent ! »
+        70 - 89 → « Bon travail ! »
+        50 - 69 → « Tu as réussi. »
+        0 - 49 → « Peut mieux faire. »
+        Tout autre nombre → « Note invalide. »
+
+
 ##  Correction avec gardes (`|`)
 
 ```haskell
