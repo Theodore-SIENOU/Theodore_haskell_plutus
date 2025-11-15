@@ -1,3 +1,10 @@
+### **HC13T2 : Filtrer les fichiers par sous-chaîne**
+
+**Sujet**
+```
+    Écrire une fonction qui filtre les fichiers du répertoire courant selon une sous-chaîne présente dans le nom du fichier à l’aide de Data.List.isInfixOf.
+```
+
 ### **Correction complète**
 
 ```haskell
